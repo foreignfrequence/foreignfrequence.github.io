@@ -4,20 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JUKEBOX HERO</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Press+Start+2P&display=swap" rel="stylesheet">
+<title>NEON JUKEBOX | Listening Party</title>
 
 <style>
-:root {
-  --red: #8e252b;
-  --dark-red: #491419;
-  --gold: #d9a94f;
-  --cream: #f4dfb4;
-  --blue: #315f68;
-  --black: #171312;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Press+Start+2P&display=swap');
 
 * {
   box-sizing: border-box;
@@ -26,10 +16,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  color: var(--cream);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
   background:
-    radial-gradient(ellipse at top, #70402d 0%, #261a17 65%, #110e0d 100%);
-  font-family: 'Special Elite', cursive;
+    radial-gradient(ellipse at center, #321052 0%, #100b27 55%, #080817 100%);
   overflow-x: hidden;
 }
 
@@ -38,143 +29,106 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .12;
-  background-image: repeating-linear-gradient(
-    0deg, transparent, transparent 3px,
-    #fff 4px
-  );
+  background-image:
+    linear-gradient(#ff36d31a 1px, transparent 1px),
+    linear-gradient(90deg, #ff36d31a 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(transparent, black);
 }
 
 header {
   padding: 35px 15px 10px;
-  text-align: center;
 }
 
-.logo {
-  font-family: 'Rye', serif;
-  font-size: clamp(35px, 8vw, 68px);
-  color: var(--gold);
-  text-shadow:
-    3px 3px 0 #54181a,
-    0 0 10px #ffcb69,
-    0 0 25px #b87924;
-  letter-spacing: 3px;
-}
-
-.tagline {
+h1 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 9px;
-  color: #e6c88c;
-  letter-spacing: 2px;
-  line-height: 2;
+  font-size: clamp(20px, 5vw, 38px);
+  color: #ff55d8;
+  text-shadow: 0 0 10px #ff00c8, 0 0 30px #ff00c8;
 }
 
-.divider {
-  width: min(600px, 85%);
-  height: 3px;
+.subtitle {
+  color: #58faff;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.party {
   margin: 20px auto;
-  background: linear-gradient(
-    90deg, transparent, var(--gold), transparent
-  );
+  color: #bffcff;
+  font-size: 12px;
+}
+
+.status {
+  color: #61ffba;
 }
 
 main {
-  text-align: center;
   padding: 10px 15px 50px;
 }
 
-.room {
-  font-size: 14px;
-  color: #f1cf8a;
-  letter-spacing: 3px;
-}
-
-.online {
-  color: #a8d5aa;
-  font-size: 12px;
-  margin: 15px;
-}
-
-/* VINTAGE JUKEBOX */
+/* JUKEBOX */
 
 .jukebox {
-  width: min(350px, 92vw);
-  margin: 35px auto;
-  padding: 15px 17px 22px;
   position: relative;
-  border-radius: 165px 165px 22px 22px;
-  background: linear-gradient(
-    90deg,
-    #532026,
-    #b44b43 15%,
-    #771f29 50%,
-    #bd5748 85%,
-    #48151e
-  );
-  border: 5px solid #d8b66f;
+  width: min(330px, 90vw);
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 150px 150px 25px 25px;
+  background: linear-gradient(135deg, #ff70c9, #8424c9 55%, #29115b);
+  border: 5px solid #ffb6ef;
   box-shadow:
-    0 0 0 5px #4c2b1e,
-    0 0 0 8px #c99b4e,
-    0 20px 45px #000;
+    0 0 15px #ff32d0,
+    0 0 40px #a000ff,
+    inset 0 0 20px #ffc1f0;
+  animation: glow 3s infinite alternate;
 }
 
-.jukebox::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 2px solid #f3d38e;
-  border-radius: 150px 150px 12px 12px;
-  pointer-events: none;
+@keyframes glow {
+  from { box-shadow: 0 0 15px #ff32d0, 0 0 30px #a000ff; }
+  to { box-shadow: 0 0 25px #00faff, 0 0 60px #ff32d0; }
 }
 
 .jukebox-top {
-  padding: 32px 5px 17px;
-  font-family: 'Rye', serif;
-  color: #ffe1a0;
-  font-size: 22px;
-  text-shadow: 0 2px 5px #4b170c;
+  padding: 30px 5px 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 0 12px #00ffff;
 }
 
-.jukebox-window {
-  position: relative;
-  padding: 23px 12px;
-  border-radius: 120px 120px 15px 15px;
-  background: linear-gradient(135deg, #fff0c4, #b78b42, #fce9b1);
-  border: 6px solid #e7c87e;
-  box-shadow: inset 0 0 15px #6c3519;
-}
-
-.inner-window {
-  padding: 20px 10px;
-  background: linear-gradient(140deg, #24474b, #10282c);
-  border: 4px solid #b18a4b;
-  border-radius: 100px 100px 12px 12px;
-  box-shadow: inset 0 0 25px #000;
+.jukebox-screen {
+  padding: 25px 10px;
+  border-radius: 15px;
+  background: #100c25;
+  border: 3px solid #64ffff;
+  box-shadow: inset 0 0 20px #00cfff;
 }
 
 .disc {
-  width: 112px;
-  height: 112px;
-  margin: 0 auto 15px;
+  width: 105px;
+  height: 105px;
+  margin: auto;
   border-radius: 50%;
-  border: 5px solid #e5b45a;
   background: repeating-radial-gradient(
-    circle, #181818 0 3px, #333 4px 6px
+    circle, #171717 0 4px, #39304d 5px 7px
   );
-  display: grid;
-  place-items: center;
-  box-shadow: 0 0 15px #e6b85f;
+  border: 5px solid #ff66cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px #ff00cc;
 }
 
-.disc-center {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.disc::after {
+  content: "♫";
   display: grid;
   place-items: center;
-  background: #a92f32;
-  color: #f8d18b;
-  font-size: 17px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ff62c9;
+  color: white;
 }
 
 .spinning {
@@ -185,175 +139,145 @@ main {
   to { transform: rotate(360deg); }
 }
 
-.now {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 8px;
-  color: #ffda8b;
-  line-height: 2;
+.speaker {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
 }
 
-#songTitle {
-  font-family: 'Rye', serif;
-  font-size: 17px;
-  color: white;
-  margin: 12px 0;
-  overflow-wrap: anywhere;
+.speaker span {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 4px solid #62faff;
+  background: #1b1043;
+  box-shadow: 0 0 12px #00eaff;
 }
 
 .equalizer {
   display: flex;
   justify-content: center;
   gap: 5px;
-  height: 30px;
+  height: 35px;
   align-items: center;
 }
 
 .equalizer span {
   width: 5px;
-  height: 7px;
-  background: #e5bc65;
-  animation: equalize .6s infinite alternate;
+  height: 10px;
+  background: #61ffff;
+  box-shadow: 0 0 8px #00ffff;
+  animation: bounce .5s infinite alternate;
 }
 
 .equalizer span:nth-child(2n) {
-  animation-delay: .3s;
+  animation-delay: .2s;
 }
-
 .equalizer span:nth-child(3n) {
-  animation-delay: .5s;
+  animation-delay: .4s;
 }
 
-@keyframes equalize {
-  to { height: 25px; }
+@keyframes bounce {
+  to { height: 32px; }
 }
 
-.speaker {
-  display: flex;
-  justify-content: space-around;
-  padding: 18px 8px 5px;
+/* PLAYER */
+
+.now-playing {
+  color: #ff75d8;
+  font-size: 10px;
+  letter-spacing: 2px;
 }
 
-.speaker span {
-  width: 49px;
-  height: 49px;
-  border: 5px solid #d8b46c;
-  border-radius: 50%;
-  background: radial-gradient(circle, #211b18, #72523a);
-  box-shadow: inset 0 0 10px black;
+#songTitle {
+  font-size: 13px;
+  margin: 12px 0;
+  color: #ffffff;
 }
-
-/* CONTROLS */
 
 .controls {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 15px;
-  margin: 25px 0;
+  margin: 20px;
 }
 
 button {
   cursor: pointer;
-  padding: 13px 18px;
-  color: #f8e4b6;
-  background: linear-gradient(#a63b39, #54191e);
-  border: 2px solid #e5bd72;
-  border-radius: 7px;
-  font-family: 'Rye', serif;
-  font-size: 17px;
-  box-shadow: 0 4px 0 #301113;
+  border: 1px solid #61ffff;
+  color: white;
+  background: #25114a;
+  border-radius: 30px;
+  padding: 12px 18px;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 10px #00eaff;
   transition: .2s;
 }
 
 button:hover {
-  background: #c18a3d;
-  color: #24140d;
-  transform: translateY(-2px);
+  background: #ff35bf;
+  box-shadow: 0 0 20px #ff35bf;
+  transform: scale(1.05);
 }
 
 .play {
-  font-size: 23px;
-  padding: 13px 24px;
+  background: #ff35bf;
+  font-size: 20px;
 }
 
-/* SONG LIST */
-
-.upload {
-  display: inline-block;
-  margin: 10px;
-  padding: 13px 20px;
-  background: #315f68;
-  color: #fff0c7;
-  border: 2px solid #d7b46d;
-  cursor: pointer;
-  font-family: 'Rye', serif;
-}
-
-.upload:hover {
-  background: #477d82;
-}
-
-input[type=file] {
+input[type="file"] {
   display: none;
 }
 
+.upload {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: white;
+  background: #6b26b8;
+  border: 1px solid #ff65db;
+  cursor: pointer;
+  font-size: 11px;
+  margin: 10px;
+}
+
 .queue {
-  width: min(470px, 95%);
+  max-width: 430px;
   margin: 35px auto;
-  padding: 22px;
-  border: 3px double var(--gold);
-  background: #271a17;
-  box-shadow: 0 8px 25px #0008;
+  padding: 20px;
+  background: #17102fdd;
+  border: 1px solid #9d49ff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #7b22ff55;
 }
 
 .queue h2 {
-  font-family: 'Rye', serif;
-  font-size: 23px;
-  color: var(--gold);
+  color: #62faff;
+  font-size: 14px;
 }
 
 #playlist {
   list-style: none;
   padding: 0;
-  text-align: left;
 }
 
 #playlist li {
-  padding: 13px 8px;
-  border-bottom: 1px dashed #87633a;
-  color: #ead5ad;
+  padding: 12px;
+  border-bottom: 1px solid #ffffff22;
+  color: #e9d5ff;
+  font-size: 11px;
   cursor: pointer;
-  font-size: 13px;
 }
 
 #playlist li:hover {
-  color: #f0b95b;
-  background: #ffffff0a;
+  color: #ff69d4;
 }
 
 footer {
-  text-align: center;
-  padding: 30px 10px;
-  font-family: 'Press Start 2P', cursive;
-  color: #d4ad6d;
-  font-size: 8px;
-  line-height: 2.5;
-}
-
-/* ARCADE DECORATIONS */
-
-.arcade {
-  color: #e8bb68;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 9px;
-  line-height: 2.5;
-  margin: 25px auto;
-}
-
-.stars {
-  color: #e3b95e;
-  letter-spacing: 12px;
-  font-size: 20px;
+  color: #a58bbd;
+  padding: 20px;
+  font-size: 10px;
+  letter-spacing: 2px;
 }
 
 </style>
@@ -362,54 +286,36 @@ footer {
 <body>
 
 <header>
-  <div class="stars">★ ✦ ★</div>
-  <div class="logo">JUKEBOX HERO</div>
-  <div class="tagline">
-    ROCK • ROLL • REPEAT
-  </div>
-  <div class="divider"></div>
+  <h1>NEON JUKEBOX</h1>
+  <p class="subtitle">✦ YOUR MUSIC. YOUR NIGHT. YOUR PARTY. ✦</p>
 </header>
 
+<div class="party">
+  <p>🪩 THE LISTENING ROOM 🪩</p>
+  <p class="status">● THE PARTY IS OPEN</p>
+</div>
+
 <main>
-
-  <div class="room">
-    WELCOME TO THE MUSIC ROOM
-  </div>
-
-  <div class="online">
-    ★ THE JUKEBOX IS OPEN ★
-  </div>
-
-  <div class="arcade">
-    INSERT YOUR FAVORITE SONGS
-  </div>
 
   <div class="jukebox">
 
     <div class="jukebox-top">
-      ♫ JUKEBOX HERO ♫
+      ★ JUKEBOX ★
     </div>
 
-    <div class="jukebox-window">
-      <div class="inner-window">
+    <div class="jukebox-screen">
 
-        <div class="disc" id="disc">
-          <div class="disc-center">♫</div>
-        </div>
+      <div class="disc" id="disc"></div>
 
-        <div class="now">NOW PLAYING</div>
+      <p class="now-playing">NOW PLAYING</p>
+      <p id="songTitle">Choose your first song ♫</p>
 
-        <div id="songTitle">
-          SELECT YOUR MUSIC
-        </div>
-
-        <div class="equalizer">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-        </div>
-
+      <div class="equalizer">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
       </div>
+
     </div>
 
     <div class="speaker">
@@ -420,36 +326,28 @@ footer {
 
   <div class="controls">
     <button onclick="previousSong()">⏮</button>
-    <button class="play" id="playBtn" onclick="togglePlay()">▶</button>
+    <button class="play" onclick="togglePlay()" id="playBtn">▶</button>
     <button onclick="nextSong()">⏭</button>
   </div>
 
   <audio id="audio"></audio>
 
   <label class="upload">
-    + ADD YOUR RECORDS
-    <input type="file" id="fileInput"
-      accept="audio/*" multiple>
+    ＋ ADD YOUR MUSIC
+    <input type="file" id="fileInput" accept="audio/*" multiple>
   </label>
 
-  <div class="queue">
-    <h2>♫ THE RECORD COLLECTION ♫</h2>
+  <section class="queue">
+    <h2>💿 THE PLAYLIST</h2>
     <ul id="playlist">
-      <li>Your records will appear here...</li>
+      <li>Your songs will appear here...</li>
     </ul>
-  </div>
-
-  <div class="arcade">
-    ★ HIGH SCORES: GOOD MUSIC ONLY ★
-  </div>
-
-  <div class="stars">✦ ★ ✦</div>
+  </section>
 
 </main>
 
 <footer>
-  JUKEBOX HERO © 1985<br>
-  MADE FOR MUSIC LOVERS
+  MADE FOR MUSIC LOVERS ♡ EST. 1985
 </footer>
 
 <script>
@@ -465,7 +363,9 @@ let songs = [];
 let currentSong = 0;
 
 fileInput.addEventListener("change", function() {
-  Array.from(this.files).forEach(file => {
+  const files = Array.from(this.files);
+
+  files.forEach(file => {
     songs.push({
       name: file.name.replace(/\.[^/.]+$/, ""),
       url: URL.createObjectURL(file)
@@ -475,6 +375,7 @@ fileInput.addEventListener("change", function() {
   renderPlaylist();
 
   if (songs.length > 0 && audio.paused) {
+    if (currentSong >= songs.length) currentSong = 0;
     loadSong(currentSong);
   }
 
@@ -486,18 +387,16 @@ function renderPlaylist() {
 
   songs.forEach((song, index) => {
     const li = document.createElement("li");
-    li.textContent = "♫ " + song.name;
+    li.textContent = (index + 1) + ". ♫ " + song.name;
 
     li.onclick = () => {
       currentSong = index;
-      loadSong(index);
+      loadSong(currentSong);
       playSong();
     };
 
     playlist.appendChild(li);
   });
-
-  updatePlaylist();
 }
 
 function loadSong(index) {
@@ -505,14 +404,13 @@ function loadSong(index) {
 
   audio.src = songs[index].url;
   songTitle.textContent = songs[index].name;
-
   updatePlaylist();
 }
 
 function updatePlaylist() {
   Array.from(playlist.children).forEach((item, index) => {
     item.style.color =
-      index === currentSong ? "#efbd61" : "#ead5ad";
+      index === currentSong ? "#ff62d5" : "#e9d5ff";
   });
 }
 
@@ -520,14 +418,14 @@ function playSong() {
   if (!songs.length) return;
 
   audio.play().then(() => {
-    playBtn.textContent = "Ⅱ";
+    playBtn.textContent = "❚❚";
     disc.classList.add("spinning");
   }).catch(() => {});
 }
 
 function togglePlay() {
   if (!songs.length) {
-    alert("Add your records first! ♫");
+    alert("Add some music first! ♫");
     return;
   }
 
@@ -535,12 +433,13 @@ function togglePlay() {
     playSong();
   } else {
     audio.pause();
+    playBtn.textContent = "▶";
+    disc.classList.remove("spinning");
   }
 }
 
 function nextSong() {
   if (!songs.length) return;
-
   currentSong = (currentSong + 1) % songs.length;
   loadSong(currentSong);
   playSong();
@@ -548,7 +447,6 @@ function nextSong() {
 
 function previousSong() {
   if (!songs.length) return;
-
   currentSong = (currentSong - 1 + songs.length) % songs.length;
   loadSong(currentSong);
   playSong();
